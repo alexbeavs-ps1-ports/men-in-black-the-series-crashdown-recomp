@@ -1,0 +1,98 @@
+{
+  "format_version": 1,
+  "id": "men-in-black-the-series-crashdown-psx",
+  "name": "Men in Black - The Series - Crashdown",
+  "kind": "recomp",
+  "platform": "psx",
+  "source_repo": "men-in-black-the-series-crashdown-recomp",
+  "rom_identity": {
+    "crc32": [
+      "d489ca42"
+    ],
+    "md5": [
+      "415db8806f7ece01c3785b17f50293cf"
+    ],
+    "sha1": [
+      "8492c5023f707e989971cc96ad87c8f75ec02aa9"
+    ],
+    "disc_serials": [
+      "SLUS-01387"
+    ],
+    "sizes": [
+      664675200
+    ],
+    "filenames": [
+      "Men in Black - The Series - Crashdown (USA).cue",
+      "Men in Black - The Series - Crashdown (USA).bin"
+    ],
+    "track_counts": [
+      1
+    ],
+    "disc_fps": [
+      "d23840b6ac3fb4e4d53d97b8cec265e789f6e61ef666f01bd9592567b788d419"
+    ],
+    "require_cue": true
+  },
+  "rom_extensions": [
+    ".cue",
+    ".bin",
+    ".chd"
+  ],
+  "bios_identity": {
+    "required": true,
+    "name": "SCPH1001.BIN",
+    "profile": "SCPH1001",
+    "crc32": [
+      "37157331"
+    ],
+    "md5": [
+      "924e392ed05558ffdb115408c263dccf"
+    ],
+    "sha1": [
+      "10155d8d6e6e832d6ea66db9bc098321fb5e8ebf"
+    ],
+    "sha256": [
+      "71af94d1e47a68c11e8fdb9f8368040601514a42a5a399cda48c7d3bff1e99d3"
+    ],
+    "sizes": [
+      524288
+    ],
+    "filenames": [
+      "SCPH1001.BIN"
+    ]
+  },
+  "release": {
+    "github": "alexbeavs-ps1-ports/men-in-black-the-series-crashdown-recomp",
+    "allow_prerelease": false,
+    "asset_glob": {
+      "windows-x64": "men-in-black-the-series-crashdown-*-windows-x64.zip",
+      "linux-x64": "men-in-black-the-series-crashdown-*-linux-x64.zip",
+      "macos-arm64": "men-in-black-the-series-crashdown-*-macos-arm64.zip",
+      "macos-x64": "men-in-black-the-series-crashdown-*-macos-x64.zip"
+    }
+  },
+  "launch": {
+    "windows": "men_in_black_the_series_crashdown.exe",
+    "linux": "men_in_black_the_series_crashdown",
+    "macos": "men_in_black_the_series_crashdown"
+  },
+  "build": {
+    "source": {
+      "github": "alexbeavs-ps1-ports/men-in-black-the-series-crashdown-recomp",
+      "ref": ""
+    },
+    "toolchain": {
+      "id": "cmake-clang-v1",
+      "min_version": "1.0.14"
+    },
+    "generate": {
+      "engine": "psxrecomp",
+      "config": "game.toml"
+    },
+    "cmake": {
+      "build_dir": "build",
+      "target": "psx-runtime",
+      "config": "Release"
+    }
+  }
+}

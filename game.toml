@@ -1,0 +1,59 @@
+# Autofilled by tools/new_project_layout/probe_disc.py from your legal dump.
+# Review before shipping. Runtime quirks / overlay seeds still need hand work.
+
+[game]
+name = "Men in Black - The Series - Crashdown"
+id = "SLUS-01387"
+players = 1
+exe = "disc/SLUS_013.87"
+disc = "disc/Men in Black - The Series - Crashdown (USA).cue"
+discs = ["disc/Men in Black - The Series - Crashdown (USA).cue"]
+disc_serials = ["SLUS-01387"]
+load_address = "0x80010000"
+entry_pc = "0x80010008"
+text_size = "0x00096000"
+stack_base = "0x801FFFF0"
+
+# Digests are for data Track 01 (first BINARY FILE / TRACK 01).
+[prepare_disc]
+out_dir = "disc"
+bin_name = "Men in Black - The Series - Crashdown (USA).bin"
+cue_name = "Men in Black - The Series - Crashdown (USA).cue"
+boot_exe = "SLUS_013.87"
+known_sizes = [664675200]
+known_md5 = [
+  "415db8806f7ece01c3785b17f50293cf",
+]
+known_sha1 = [
+  "8492c5023f707e989971cc96ad87c8f75ec02aa9",
+]
+known_crc32 = [
+  "d489ca42",
+]
+
+[recompiler]
+bios_config = "psxrecomp/bios/SCPH1001.toml"
+seeds = "seeds/ghidra_funcs.txt"
+out_dir = "generated"
+strict = true
+
+[runtime]
+openbios = false
+bios_hle = false
+window_title = "Men in Black - The Series - Crashdown Recompiled"
+memcard_dir = "saves"
+overlay_cache = true
+
+[video]
+renderer = "opengl"
+aspect_ratio = "4:3"
+
+[controller]
+default_mode = "digital"
+
+# Online mount gate: digests + track count + optional TOC fingerprint
+# (see docs/NETPLAY.md).
+[netplay]
+require_cue = true
+required_tracks = 1
+required_disc_fp = "d23840b6ac3fb4e4d53d97b8cec265e789f6e61ef666f01bd9592567b788d419"
